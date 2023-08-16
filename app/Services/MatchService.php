@@ -3,12 +3,7 @@
 namespace App\Services;
 
 use App\Contracts\MatchServiceInterface;
-use App\Helpers\Helper;
-use App\Models\League;
 use App\Models\Matches;
-use App\Models\Season;
-use App\Models\Team;
-use App\Models\Week;
 use Illuminate\Support\Facades\DB;
 
 class MatchService implements MatchServiceInterface
