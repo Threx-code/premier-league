@@ -47,19 +47,4 @@ class MatchService implements MatchServiceInterface
         return DB::select($query);
     }
 
-    public function updateMatch()
-    {
-
-    }
-
-    public function getMatchById()
-    {
-
-    }
-
-    public function getTeamByWeekId()
-    {
-
-    }
-
 }
