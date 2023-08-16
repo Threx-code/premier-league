@@ -19,15 +19,6 @@ This application requires PHP ^8.1
 - Copy the url:8000 (see how to use the application below)
 
 
-## TO RUN PHPUNIT TEST
-- cd ~/path/to/the/directory/where/you/download/the/project
-- cp .env.example .env
-- composer install
-- docker compose build
-- docker compose ps -a (To see the list of containers started)
-- docker exec Laravel_php -it /bin/sh
-
-
 ## HOW to use the application
 - To access the application .........http://0.0.0.0:8000/premier/league
 
