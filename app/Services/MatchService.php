@@ -8,10 +8,13 @@ use Illuminate\Support\Facades\DB;
 
 class MatchService implements MatchServiceInterface
 {
-    public function __construct(private readonly Matches $matches){
-    }
+    public function __construct(private readonly Matches $matches){}
 
-    public function createMatch($data)
+    /**
+     * @param $data
+     * @return mixed
+     */
+    public function createMatch($data): mixed
     {
         return $this->matches::create($data);
     }

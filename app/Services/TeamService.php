@@ -4,7 +4,14 @@ namespace App\Services;
 
 class TeamService
 {
-    public function calculateScore($homeScore, $awayScore, $home, $away)
+    /**
+     * @param $homeScore
+     * @param $awayScore
+     * @param $home
+     * @param $away
+     * @return void
+     */
+    public function calculateScore($homeScore, $awayScore, $home, $away): void
     {
         if($homeScore > $awayScore){
             $this->goalsAndPoints($home, $awayScore, $homeScore, $away);
