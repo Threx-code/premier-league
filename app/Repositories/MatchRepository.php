@@ -9,7 +9,6 @@ class MatchRepository implements MatchInterface
 {
     public function __construct(private readonly MatchServiceInterface $service){}
 
-
     /**
      * @param $weekId
      * @param $fetchAll

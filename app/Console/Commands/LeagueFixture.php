@@ -12,7 +12,7 @@ class LeagueFixture extends Command
      *
      * @var string
      */
-    protected $signature = 'league:fixture {team_num}';
+    protected $signature = 'league {team_num}';
 
     /**
      * The console command description.
