@@ -15,12 +15,7 @@ class SeasonBaseService implements SeasonBaseInterface
      * @param Season $season
      * @param Team $team
      */
-    public function __construct(
-        private readonly Week $week,
-        private readonly Season $season,
-        private readonly Team $team,
-    ){
-    }
+    public function __construct(private readonly Week $week, private readonly Season $season, private readonly Team $team){}
 
     public function generateLeagueSeason(): mixed
     {
@@ -36,8 +31,6 @@ class SeasonBaseService implements SeasonBaseInterface
                 'finished' => false
             ]);
     }
-
-
     /**
      * @param $week
      * @param $seasonId
