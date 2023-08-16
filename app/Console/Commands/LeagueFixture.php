@@ -43,7 +43,7 @@ class LeagueFixture extends Command
             exit();
         }
 
-       $response = $this->service->processLeague($teamNum);
+        $this->service->processLeague($teamNum);
         echo '~~~~~~~ League fixture completed ~~~~~~~~~~'."\n";
     }
 }
