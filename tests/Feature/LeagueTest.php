@@ -31,7 +31,7 @@ class LeagueTest extends TestCase
     {
         return Week::where('id', $weekId)->first();
     }
-    const PREFIX = 'premier/league/';
+
     public function test_application_return_a_successful_response()
     {
         $response = $this->get('/');
