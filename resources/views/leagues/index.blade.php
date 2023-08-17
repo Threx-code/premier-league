@@ -97,7 +97,7 @@
 
     <script type="text/javascript">
         $(document).ready(function(){
-            var week_id = "{{ $matches[0]->week_id }}";
+            var week_id = "{{ $matches[0]->week_id ?? 1 }}";
             var token = $('input[name="_token"]').val();
 
             $(".next_week_button").on("click", function(){
