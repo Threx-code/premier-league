@@ -218,9 +218,9 @@ class LeagueService implements LeagueServiceInterface
     /**
      * @param $weekId
      * @param $fetchAll
-     * @return array
+     * @return mixed
      */
-    public function getLeagueFixtures($weekId, $fetchAll): array
+    public function getLeagueFixtures($weekId, $fetchAll): mixed
     {
         return $this->leagueRepository->getLeagueFixtures($weekId, $fetchAll);
     }
@@ -228,9 +228,9 @@ class LeagueService implements LeagueServiceInterface
     /**
      * @param $weekId
      * @param $fetchAll
-     * @return array
+     * @return mixed
      */
-    public function getPrediction($weekId, $fetchAll): array
+    public function getPrediction($weekId, $fetchAll): mixed
     {
         return $this->leagueRepository->getPrediction($weekId, $fetchAll);
     }

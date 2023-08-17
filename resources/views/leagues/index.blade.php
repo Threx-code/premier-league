@@ -69,17 +69,22 @@
         <div class="col-3">
             <div class="">
                 @if(!empty($predictions))
-                <div class="card-header">
-                    Prediction
-                </div>
-                <div class="card-body">
-                    @foreach($predictions as $key => $prediction)
-                        <div class="form-row" style="border-bottom: 0.1px solid #ddd">
-                            <div class="col-8"><label>{{$prediction->name}}</label></div>
-                            <div class="col-4"><label>{{$prediction->prediction}}%</label></div>
+                    @php
+                        $weeks = array_unique(array_column(json_decode(json_encode($predictions), true), 'week_name'));
+                    @endphp
+                    @foreach($weeks as $week)
+                        <div class="card-header">
+                            Prediction Result for {{ $week ?? '' }}
                         </div>
                     @endforeach
-                </div>
+                    <div class="card-body">
+                        @foreach($predictions as $key => $prediction)
+                            <div class="form-row" style="border-bottom: 0.1px solid #ddd">
+                                <div class="col-8"><label>{{$prediction->name}}</label></div>
+                                <div class="col-4"><label>{{$prediction->prediction}}%</label></div>
+                            </div>
+                        @endforeach
+                    </div>
                 @endif
             </div>
         </div>
@@ -93,7 +98,7 @@
     <script type="text/javascript">
         $(document).ready(function(){
             var week_id = "{{ $matches[0]->week_id }}";
-            var token = $('input[name="_token"').val();
+            var token = $('input[name="_token"]').val();
 
             $(".next_week_button").on("click", function(){
                 $.ajaxSetup({

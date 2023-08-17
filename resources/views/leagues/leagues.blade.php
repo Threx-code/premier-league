@@ -50,7 +50,7 @@
                     @foreach($matches as $key => $match)
                         <div class="form-row">
                             <label>{{$match->home_team}}</label>
-                            <div class="col"><input type="text" class="form-control" value="{{$match->home_goal}}"></div>
+                            <div class="col"><input type="text" class="form-control" value="{{$match->home_goal}}" /></div>
                             <div class="col"><input type="text" class="form-control" value="{{$match->away_goal}}"></div>
                             <label>{{$match->away_team}}</label>
                         </div>
@@ -72,7 +72,7 @@
     <div class="">
         @if(!empty($predictions))
             @php
-                $weeks = array_unique(array_column($predictions, 'week_name'));
+                $weeks = array_unique(array_column(json_decode(json_encode($predictions), true), 'week_name'));
             @endphp
             @foreach($weeks as $week)
                 <div class="card-header">
