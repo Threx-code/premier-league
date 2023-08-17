@@ -18,12 +18,12 @@ return new class extends Migration
             $table->unsignedBigInteger('team_id');
             $table->unsignedBigInteger('next_team_id');
             $table->unsignedBigInteger('week_id');
-            $table->boolean('played');
-            $table->integer('won');
-            $table->integer('drawn');
-            $table->integer('lost');
-            $table->integer('goals_difference');
-            $table->integer('points');
+            $table->boolean('played')->default(0);
+            $table->integer('won')->default(0);
+            $table->integer('drawn')->default(0);
+            $table->integer('lost')->default(0);
+            $table->integer('goals_difference')->default(0);
+            $table->integer('points')->default(0);
             $table->timestamps();
             $table->index(['id', 'team_id', 'next_team_id', 'week_id', 'played', 'won', 'drawn', 'lost', 'won', 'points']);
         });
