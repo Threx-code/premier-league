@@ -15,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::middleware([])->prefix('premier/league/')->group(function(){
+Route::middleware([])->group(function(){
     Route::get('/', [LeagueController::class, 'getLeagueFixtures']);
-    Route::get('/22', [LeagueController::class, 'getAllLeagueFixtures']);
-    Route::post('next-week', [LeagueController::class, 'getNextLeagueFixtures'])->name('premier.league.next-week');
-    Route::post('fetch-all', [LeagueController::class, 'getAllLeagueFixtures'])->name('premier.league.fetch-all');
+    Route::prefix('premier/league/')->group(function () {
+        Route::post('next-week', [LeagueController::class, 'getNextLeagueFixtures'])->name('premier.league.next-week');
+        Route::post('fetch-all', [LeagueController::class, 'getAllLeagueFixtures'])->name('premier.league.fetch-all');
+    });
 });
